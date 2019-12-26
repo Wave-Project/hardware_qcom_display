@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2014 - 2018, The Linux Foundation. All rights reserved.
+* Copyright (c) 2014 - 2019, The Linux Foundation. All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without modification, are permitted
 * provided that the following conditions are met:
@@ -76,11 +76,13 @@ class HWInterface {
   virtual DisplayError Deinit() = 0;
   virtual DisplayError GetActiveConfig(uint32_t *active_config) = 0;
   virtual DisplayError SetActiveConfig(uint32_t active_config) = 0;
+  virtual DisplayError ClearConfigs() = 0;
   virtual DisplayError GetNumDisplayAttributes(uint32_t *count) = 0;
   virtual DisplayError GetDisplayAttributes(uint32_t index,
                                             HWDisplayAttributes *display_attributes) = 0;
   virtual DisplayError GetHWPanelInfo(HWPanelInfo *panel_info) = 0;
   virtual DisplayError SetDisplayAttributes(uint32_t index) = 0;
+  virtual DisplayError SetConfigAttributes(uint32_t index, uint32_t w, uint32_t h) = 0;
   virtual DisplayError SetDisplayAttributes(const HWDisplayAttributes &display_attributes) = 0;
   virtual DisplayError GetConfigIndex(uint32_t mode, uint32_t *index) = 0;
   virtual DisplayError GetConfigIndex(uint32_t width, uint32_t height, uint32_t *index) = 0;
